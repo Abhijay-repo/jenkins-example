@@ -5,8 +5,10 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(globalMavenSettingsConfig: 'null', jdk: 'JAVA_HOME', maven: 'M2_HOME', mavenSettingsConfig: 'null') {
-      sh 'mvn clean compile'
+                withMaven(globalMavenSettingsConfig: 'null', globalMavenSettingsFilePath: 'C:\\Dev tools\\apache-maven-3.8.6\\conf', jdk: 'JAVA_HOME', maven: 'M2_HOME', mavenSettingsConfig: 'null', mavenSettingsFilePath: 'C:\\Dev tools\\apache-maven-3.8.6\\conf') 
+   
+ {
+      bat 'mvn clean compile'
 }
             }
         }
@@ -14,8 +16,9 @@ pipeline {
         stage ('Testing Stage') {
 
             steps {
-                withMaven(globalMavenSettingsConfig: 'null', jdk: 'JAVA_HOME', maven: 'M2_HOME', mavenSettingsConfig: 'null') {
-     sh 'mvn test'
+                withMaven(globalMavenSettingsConfig: 'null', globalMavenSettingsFilePath: 'C:\\Dev tools\\apache-maven-3.8.6\\conf', jdk: 'JAVA_HOME', maven: 'M2_HOME', mavenSettingsConfig: 'null', mavenSettingsFilePath: 'C:\\Dev tools\\apache-maven-3.8.6\\conf') 
+  {
+     bat 'mvn test'
 }
             }
         }
@@ -23,8 +26,9 @@ pipeline {
 
         stage ('Deployment Stage') {
             steps {
-                withMaven(globalMavenSettingsConfig: 'null', jdk: 'JAVA_HOME', maven: 'M2_HOME', mavenSettingsConfig: 'null') {
-                    sh 'mvn deploy'
+                withMaven(globalMavenSettingsConfig: 'null', globalMavenSettingsFilePath: 'C:\\Dev tools\\apache-maven-3.8.6\\conf', jdk: 'JAVA_HOME', maven: 'M2_HOME', mavenSettingsConfig: 'null', mavenSettingsFilePath: 'C:\\Dev tools\\apache-maven-3.8.6\\conf') 
+     {
+                    bat 'mvn deploy'
                 }
             }
         }
