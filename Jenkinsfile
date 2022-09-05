@@ -1,4 +1,4 @@
-withMaven(globalMavenSettingsConfig: 'null', jdk: 'JAVA_HOME', maven: 'M2_HOME', mavenSettingsConfig: 'null')pipeline {
+
     agent any
 
     stages {
